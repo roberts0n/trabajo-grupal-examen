@@ -1,7 +1,7 @@
 py -m venv myvenv
 
 
-venv/scripts/activate
+myvenv/scripts/activate
 
 
 pip install -r requirements.txt
