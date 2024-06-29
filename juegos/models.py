@@ -24,8 +24,8 @@ class Plataforma(models.Model):
 class Juego (models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.IntegerField()
-    imagen = models.ImageField(upload_to='juegos')
-    descripcion = models.CharField(max_length=250)
+    imagen = models.ImageField(upload_to='juegos/', null=True, blank=True)
+    descripcion = models.CharField(max_length=1000)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     plataforma = models.ForeignKey(Plataforma, on_delete=models.CASCADE)
     stock = models.IntegerField()
