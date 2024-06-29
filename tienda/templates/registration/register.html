@@ -1,0 +1,47 @@
+{% extends "herencias/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block content %}
+
+
+    <div class="container-fluid medio2">
+        <div class="row">
+          <form action="" id="registroForm" method="post" class="mx-auto col-xs-6 col-sm-6 col-xl-3">
+            {% csrf_token %}
+              <h4 class="text-center">Registro</h4>
+              {{form | crispy }}
+              <button type="submit" class="btn btn-primary mt-4">Registrarse</button>
+            </form>
+          </div>
+      </div>
+
+    {% endblock %}
+    
+</body>
+</html>
+
+
+   <!-- <div class="mb-3 mt-5">
+                  <label for="usuario" class="form-label">Usuario :</label>
+                  <input type="text" name="username" class="form-control" id="usuario">
+                </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo :</label>
+                <input type="email" class="form-control" id="correo">
+              </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Contraseña : </label>
+                <input type="password" class="form-control" id="contraseña">
+                <div id="warning" class="form-text mt-3">Ya eres usuario registrado? <a href="login.html">Presiona Aqui</a></div>
+              </div> -->

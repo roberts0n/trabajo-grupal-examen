@@ -1,8 +1,12 @@
-from django.shortcuts import render, get_object_or_404
-
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout,authenticate,login
 from juegos.models import Juego,Categoria,Plataforma
+from .forms import CustomUserCreationForm
+
 
 # Create your views here.
+
 
 def home(request):
 
@@ -17,8 +21,31 @@ def categoriaSteam(request):
 
     return render(request,'tienda/categorias.html',{"juegos":juegos})
 
-
+@login_required
 def detalleJuego(request, juego_id):
     juego = get_object_or_404(Juego,pk=juego_id)
 
     return render(request,'tienda/detalle.html',{"juego_detalle":juego})
+def exit(request):
+
+    logout(request)
+    
+    return redirect('Home')
+
+def register(request):
+
+    data = {
+        'form' : CustomUserCreationForm()
+    }
+
+    if request.method == 'POST':
+        user_creation_form = CustomUserCreationForm(data=request.POST)
+
+        if user_creation_form.is_valid():
+            user_creation_form.save()
+
+            user = authenticate(username=user_creation_form.cleaned_data['username'], password=user_creation_form.cleaned_data['password1'])
+            login(request, user)
+            return redirect('Home')
+    
+    return render(request,'registration/register.html',data)
