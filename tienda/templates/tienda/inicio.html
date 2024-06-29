@@ -65,7 +65,7 @@
             {% for juego in juegos %}
             <div class="col-md-4 col-sm-6 col-xs-12 my-5">
                 <div class="card bg-dark text-center cartas movimiento" >
-                    <img src="{{juego.imagen}}" class="card-img-top rounded" alt="Imagen de videojuego">
+                    <img src="{{juego.imagen.url}}" class="card-img-top rounded" alt="Imagen de videojuego">
                 <div class="card-body bg-dark text-light">
                     <h5 class="card-title">{{juego.nombre}}</h5>
                     <p class="card-text"> $: {{juego.precio}}</p>
