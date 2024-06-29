@@ -44,7 +44,7 @@ h1,h2,h3,h4,h5,h6,p{
     background: blue;
 }
 
-.btn-danger{
+ .btn-danger{
     width: 50%;
     border: none;
     border-radius: 50px;
@@ -55,6 +55,22 @@ h1,h2,h3,h4,h5,h6,p{
 .btn-danger:hover{
     background: rgb(0, 0, 0);
 }
+ 
+
+ .btn-success{
+    width: 50%;
+    border: none;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    transition: 0.5s ease;
+}
+
+.btn-success:hover{
+    background: rgb(0, 0, 0);
+}
+  
+
+
 
 
 @media (min-width: 767.98px){

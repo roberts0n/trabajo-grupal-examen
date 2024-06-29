@@ -33,12 +33,12 @@
                 <h3 class="">{{juego_detalle.plataforma}}</h3>
                 <h4 class=""> $: {{juego_detalle.precio}} CLP</h4>
                 <p class="mt-5 ">{{juego_detalle.descripcion}}</p>
-                <button id="añadirCarrito" class="btn btn-primary mt-5"> Comprar</button>
-            </div>
+                <a href="{% url 'carro:add' juego_detalle.id %}" id="" class="btn btn-primary mt-5"> Comprar</a>
+            </div>  
 
         </div>
     </div>
-        <br>
+    <br>
       <br>
       <br>
       <br>
