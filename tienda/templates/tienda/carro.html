@@ -35,27 +35,51 @@
                     <h3 class="pt-5 text-center">{{item.nombre}}</h3>
                     <h5 class="mt-2 text-center"> $ : {{item.precio}} CLP</h5>
                     <div class="d-flex justify-content-center">
-                      <a id="" class="mt-2 btn btn-danger">Eliminar del carro </a>
-                      <a id="" class="mt-2 btn btn-success ">Agregar otro </a>
+                      <a href="{% url 'carro:decrement' item.producto_id %}" class="mt-2 btn btn-danger">Eliminar del carro </a>
+                      <a href="{% url 'carro:add' item.producto_id %}" class="mt-2 btn btn-success ">Agregar otro </a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <p class="mt-2 text-center">{{item.cantidad}}</p>
                     </div>
                   </div>
               
               {% endfor %}
+            
+            {% else %}
+
+                <h1 class="mt-5 text-center">Su carro esta vacio</h1>
+
+
+
+              
             {% endif %}
         </div>
 
 
+
+        {% if request.session.carro.items %}
 
 
         <div>
           <h3 class="text-center mt-5 mb-5" id="totalCarrito"></h3>
           <button id="botonCompra" class="btn btn-primary">Comprar</button>
         </div>
+
+        {% endif %}
     </div>
 
 
 
 
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <br>
       <br>
       <br>
@@ -71,3 +95,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+<!-- {% url 'carro:add' item.id %} -->

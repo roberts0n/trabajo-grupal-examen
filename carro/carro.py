@@ -40,9 +40,9 @@ class Carro:
         self.session.modified = True
 
     def remove(self,producto):
-        producto_id = str(producto_id)
+        producto_id = str(producto.id)
         if producto_id in self.carro:
-            del self.carro[producto.id]
+            del self.carro[producto_id]
             self.save()
 
     def decrement(self,producto):
