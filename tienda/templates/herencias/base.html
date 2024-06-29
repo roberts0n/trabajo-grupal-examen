@@ -22,7 +22,7 @@
           <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link enlace ms-5" href="/index.html">Pagina principal <i class=" ms-1 fa-solid fa-house"></i>
+                <a class="nav-link enlace ms-5" href="{% url 'Home' %}">Pagina principal <i class=" ms-1 fa-solid fa-house"></i>
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
@@ -55,10 +55,10 @@
               <li class="nav-item">
                 {% if request.user.is_authenticated %}
                 <a class="nav-link enlace me-5 " href="{% url 'Exit' %}" id="cerrarSesion">Cerrar sesion</a>
-                {% endif %}
               </li>
               <li>
                 <a  class="nav-link enlace ms-5 ms-auto me-3" href="{% url 'carro:verCarro' %}">Carro de compra<i class="ms-1 fa-solid fa-cart-shopping "></i><span id="cuentaCarro" class="ms-1"></span></a>
+                {% endif %}
               </li>
             </ul>
           </div>
