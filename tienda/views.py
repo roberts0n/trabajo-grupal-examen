@@ -17,9 +17,60 @@ def home(request):
 def categoriaSteam(request):
 
     juegos = Juego.objects.filter(plataforma__nombre="Steam")
+    plataforma = "Plataforma : Steam"
     
 
-    return render(request,'tienda/categorias.html',{"juegos":juegos})
+    return render(request,'tienda/filtrado.html',{"juegos":juegos,"titulo":plataforma})
+
+def categoriaSwitch(request):
+
+    juegos = Juego.objects.filter(plataforma__nombre="Switch")
+    plataforma = "Plataforma : Switch"
+    
+
+    return render(request,'tienda/filtrado.html',{"juegos":juegos,"titulo":plataforma})
+
+def categoriaXbox(request):
+
+    juegos = Juego.objects.filter(plataforma__nombre="Xbox")
+    plataforma = "Plataforma : Xbox"
+    
+
+    return render(request,'tienda/filtrado.html',{"juegos":juegos,"titulo":plataforma})
+
+def categoriaPlay(request):
+
+    juegos = Juego.objects.filter(plataforma__nombre="Playstation")
+    plataforma = "Plataforma : Playstation"
+    
+
+    return render(request,'tienda/filtrado.html',{"juegos":juegos,"titulo":plataforma})
+
+def categoriaRpg(request):
+
+    juegos = Juego.objects.filter(categoria__nombre="RPG")
+    plataforma = "Categoria : RPG"
+    
+
+    return render(request,'tienda/filtrado.html',{"juegos":juegos,"titulo":plataforma})
+
+def categoriaAccion(request):
+
+    juegos = Juego.objects.filter(categoria__nombre="Acción")
+    plataforma = "Categoria : Acción"
+    
+
+    return render(request,'tienda/filtrado.html',{"juegos":juegos,"titulo":plataforma})
+
+
+def categoriaDeportes(request):
+
+    juegos = Juego.objects.filter(categoria__nombre="Deportes")
+    plataforma = "Categoria : Deportes"
+    
+
+    return render(request,'tienda/filtrado.html',{"juegos":juegos,"titulo":plataforma})
+
 
 @login_required
 def detalleJuego(request, juego_id):

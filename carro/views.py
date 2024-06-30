@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .carro import Carro
 from juegos.models import Juego
+from django.contrib import messages
 
 # Create your views here.
 
@@ -42,6 +43,7 @@ def limpiarCarrito(request):
     carro = Carro(request)
 
     carro.clean()
+    messages.success(request, 'Muchas gracias por su compra !')
     return redirect('Home')
 
 

@@ -39,7 +39,7 @@
                       <a href="{% url 'carro:add' item.producto_id %}" class="mt-2 btn btn-success ">Agregar otro </a>
                     </div>
                     <div class="d-flex justify-content-center">
-                      <p class="mt-2 text-center">{{item.cantidad}}</p>
+                      <p class="mt-2 text-center">{{item.cantidad}} copias</p>
                     </div>
                   </div>
               
@@ -63,7 +63,7 @@
         <div>
           <h3 class="text-center mt-5 mb-5" id="totalCarrito"></h3>
             <h1 class="text-center">Total : ${{importe_total_carro}}</h1>
-          <button id="botonCompra" class="btn btn-primary">Comprar</button>
+          <a href="{% url 'carro:clean' %}" id="botonCompra" class="btn btn-primary">Comprar</a>
         </div>
 
         {% endif %}
