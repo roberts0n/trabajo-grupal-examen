@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout,authenticate,login
 from juegos.models import Juego,Categoria,Plataforma
 from .forms import CustomUserCreationForm
+from carro.models import juegoComprado
 
 
 # Create your views here.
@@ -77,6 +78,16 @@ def detalleJuego(request, juego_id):
     juego = get_object_or_404(Juego,pk=juego_id)
 
     return render(request,'tienda/detalle.html',{"juego_detalle":juego})
+
+
+def verCompras(request):
+    usuario = request.user
+    juego_comprado = juegoComprado.objects.filter(user=usuario)
+    return render(request,'tienda/compras.html',{'juegosComprados':juego_comprado})
+
+
+
+
 def exit(request):
 
     logout(request)

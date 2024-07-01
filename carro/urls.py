@@ -11,5 +11,6 @@ urlpatterns=[
     path("decrement/<int:juego_id>/",views.restarCarrito, name="decrement"),
     path("clean/",views.limpiarCarrito, name="clean"),
     path("carrito/",views.verCarrito, name="verCarro"),
+    path("comprar/",views.comprarCarro, name="comprarCarro"),
 ]
 
