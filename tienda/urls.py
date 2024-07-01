@@ -16,6 +16,7 @@ urlpatterns = [
     path('categoria/rpg',views.categoriaRpg, name="rpg"),
     path('categoria/accion',views.categoriaAccion, name="accion"),
     path('categoria/deportes',views.categoriaDeportes, name="deportes"),
+    path('compras',views.verCompras, name="misCompras"),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

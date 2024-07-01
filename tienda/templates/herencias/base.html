@@ -58,8 +58,11 @@
               </li>
               <li>
                 <a  class="nav-link enlace ms-5 ms-auto me-3" href="{% url 'carro:verCarro' %}">Carro de compra<i class="ms-1 fa-solid fa-cart-shopping "></i><span id="cuentaCarro" class="ms-1"></span></a>
-                {% endif %}
               </li>
+              <li>
+                <a class="nav-link enlace me-5 " href="{% url 'misCompras' %}">Mis compras</a>
+              </li>
+              {% endif %}
             </ul>
           </div>
         </div>
