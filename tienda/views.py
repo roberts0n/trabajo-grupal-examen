@@ -4,6 +4,7 @@ from django.contrib.auth import logout,authenticate,login
 from juegos.models import Juego,Categoria,Plataforma
 from .forms import CustomUserCreationForm
 from carro.models import juegoComprado
+from django.contrib import messages
 
 
 # Create your views here.
@@ -109,5 +110,10 @@ def register(request):
             user = authenticate(username=user_creation_form.cleaned_data['username'], password=user_creation_form.cleaned_data['password1'])
             login(request, user)
             return redirect('Home')
+        
+        else:
+            for field, errors in user_creation_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
     
     return render(request,'registration/register.html',data)

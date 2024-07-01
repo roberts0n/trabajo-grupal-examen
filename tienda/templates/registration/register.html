@@ -20,6 +20,13 @@
           <form action="" id="registroForm" method="post" class="mx-auto col-xs-6 col-sm-6 col-xl-3">
             {% csrf_token %}
               <h4 class="text-center">Registro</h4>
+            {% if messages %}
+              <ul class="messages">
+              {% for message in messages %}
+              <li>{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
               {{form | crispy }}
               <button type="submit" class="btn btn-primary mt-4">Registrarse</button>
             </form>
