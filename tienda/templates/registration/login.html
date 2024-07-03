@@ -22,13 +22,16 @@
                   <h4 class="text-center">Inicio de sesion</h4>
 
                   {{form | crispy }}
-                  
+                  <div id="warning" class="form-text mt-3">No te has registrado? <a href="{% url 'register' %}">Presiona aqui</a></div>
                   <button type="submit" class="btn btn-primary mt-4">Iniciar sesion</button>
                 </form>
                 <p class="mt-3" id="loginMessage"></p>
               </div>
           </div>
 
+          <br>
+          <br>
+          <br>
           <br>
           <br>
           <br>

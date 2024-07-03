@@ -85,6 +85,7 @@ def comprarCarro(request):
             juego_comprado.save()
     
     carro.clean()
+    messages.success(request, 'Muchas gracias por su compra! en "Mis compras" puede comprobar sus juegos.')
     return redirect('Home')
 
 

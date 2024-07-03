@@ -35,7 +35,7 @@
                     <h3 class="pt-5 text-center">{{item.nombre}}</h3>
                     <h5 class="mt-2 text-center"> $ : {{item.precio}} CLP</h5>
                     <div class="d-flex justify-content-center">
-                      <a href="{% url 'carro:decrement' item.producto_id %}" class="mt-2 btn btn-danger">Eliminar del carro </a>
+                      <a href="{% url 'carro:decrement' item.producto_id %}" class=" mt-2 btn btn-danger">Eliminar del carro </a>
                       <a href="{% url 'carro:add' item.producto_id %}" class="mt-2 btn btn-success ">Agregar otro </a>
                     </div>
                     <div class="d-flex justify-content-center">
@@ -72,6 +72,8 @@
 
 
 
+      <br>
+      <br>
       <br>
       <br>
       <br>
