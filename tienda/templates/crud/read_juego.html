@@ -15,26 +15,41 @@
 <body>
 
     {% block content %}
+    <h1 class="text-center my-5">CRUD de juegos</h1>
 
-     <h1 class="text-center my-5">Añadir Juego</h1>
+    <div class="container d-flex justify-content-center">
 
+    <a href="{% url 'juego:add'  %}" class="p-5 d-flex justify-content-center align-items-center mb-3 btn btn-success"  ><h2>Agregar juego</h2></a>
 
-    <div class="container d-flex justify-content-center align-items-center">
-
-        <form class="my-5 bg-dark row  p-4 col-12 col-md-8 col-lg-6" method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button class="btn btn-primary" type="submit">Agregar juego</button>
-        </form>
     </div>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
+
+    <div class="container mt-5 mb-5">
+        <h2 class="text-center">Juegos en la BDD</h2>
+          <div class="row" id="juegoRow">
+            {% for juego in juegos %}
+            <div class="col-md-4 col-sm-6 col-xs-12 my-5">
+                <div class="card bg-dark text-center cartas movimiento" >
+                    <img src="{{juego.imagen.url}}" class="card-img-top rounded" alt="Imagen de videojuego">
+                <div class="card-body bg-dark text-light">
+                    <h5 class="card-title">{{juego.nombre}}</h5>
+                    <p class="card-text"> $: {{juego.precio}}</p>
+                    <a href="{% url 'juego:edit' juego.id %}" class="mb-3 comprarBoton btn btn-primary" data-nombre="{{juego.nombre}}" >Editar juego</a>
+                    <a href="{% url 'juego:delete' juego.id %}" class="comprarBoton btn btn-danger" data-nombre="{{juego.nombre}}" >Eliminar juego</a>
+                </div>
+                </div>
+            </div> 
+
+            {% endfor %}
+          </div>
+      </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
       {% endblock %}
 

@@ -15,26 +15,39 @@
 <body>
 
     {% block content %}
-
-     <h1 class="text-center my-5">Añadir Juego</h1>
-
+    <h1 class="text-center my-5">Juego a eliminar</h1>
 
     <div class="container d-flex justify-content-center align-items-center">
 
-        <form class="my-5 bg-dark row  p-4 col-12 col-md-8 col-lg-6" method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button class="btn btn-primary" type="submit">Agregar juego</button>
-        </form>
-    </div>
+        <div class="container ficha">
+            <div class="row" id="detalleJuego">
+              
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 pt-5">
+                    <img src="{{juego.imagen.url }}" alt="Imagen de videojuego" class="card-img-top w-100">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 pt-5">
+                    <h2 class="mt-5">{{juego.nombre}}</h2>
+                    <h3 class="">{{juego.plataforma}}</h3>
+                    <h4 class=""> $: {{juego.precio}} CLP</h4>
+                    <h5 class=""> Stock: {{juego.stock}} </h5> 
+                    <form class="mt-5 bg-dark  col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 pt-5 " method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h4 class="text-light">Estas seguro de eliminar este juego?</h4>
+                        <button class="btn btn-danger" type="submit">Eliminar Juego</button>
+                    </form>
+                </div>  
     
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+            </div>
+        </div>
 
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
       {% endblock %}
 

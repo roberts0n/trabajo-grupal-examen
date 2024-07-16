@@ -26,3 +26,18 @@ def editar_juego(request, juego_id):
     else:
         form = JuegoForm(instance=juego)
     return render(request,'crud/edit_juego.html',{'form':form,'juego':juego})
+
+
+def delete_juego(request,juego_id):
+    juego = get_object_or_404(Juego,id=juego_id)
+    if request.method == 'POST':
+        juego.delete()
+        return redirect('Home')
+    return render(request,'crud/delete_juego.html',{'juego':juego})
+
+def leer_juego(request):
+
+    juegos = Juego.objects.all()
+
+    return render(request,'crud/read_juego.html',{"juegos":juegos})
+
