@@ -92,6 +92,7 @@
                     <h5 class="card-title">{{juego.nombre}}</h5>
                     <p class="card-text"> $: {{juego.precio}}</p>
                     <a href="{% url 'detalle_juego' juego.id %}" class="comprarBoton btn btn-primary" data-nombre="{{juego.nombre}}" >Comprar</a>
+                    <a href="{% url 'juego:edit' juego.id %}" class="comprarBoton btn btn-primary" data-nombre="{{juego.nombre}}" >Editar</a>
                 </div>
                 </div>
             </div> 
