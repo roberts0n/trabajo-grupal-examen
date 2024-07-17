@@ -21,7 +21,7 @@
 
     <div class="container d-flex justify-content-center align-items-center">
 
-        <form class="my-5 bg-dark row  p-4 col-12 col-md-8 col-lg-6" method="post" enctype="multipart/form-data">
+        <form class="my-5 bg-dark row  p-4 col-12 col-md-8 col-lg-6" method="post" onsubmit="alert('Juego agregado con exito!')" enctype="multipart/form-data">
           {% csrf_token %}
           {{ form.as_p }}
           <button class="btn btn-primary" type="submit">Agregar juego</button>

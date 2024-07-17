@@ -25,7 +25,7 @@ def editar_juego(request, juego_id):
             return redirect('Home')
     else:
         form = JuegoForm(instance=juego)
-    return render(request,'crud/edit_juego.html',{'form':form,'juego':juego})
+    return render(request,'crud/edit_juego.html',{'form':form,'juego':juego,'exitoso':'Juego editado con exito'})
 
 
 def delete_juego(request,juego_id):
